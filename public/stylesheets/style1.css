@@ -1,0 +1,886 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+}
+
+
+#fp{
+    
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+#fp img{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+#fp h1{
+    font-family: 'Special Elite', cursive;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+   width: 100%;
+   height: 20%;
+   overflow: hidden;
+   z-index: 999;
+   color: #fff;
+  
+}
+#fp span{
+    display: inline-block;
+    font-size: 10vw;
+    -webkit-transform: translateY(200%);
+        -ms-transform: translateY(200%);
+            transform: translateY(200%);
+}
+#fp #cube{
+    position: absolute;
+    width: 20%;
+    height: 50%;  
+}
+#main{
+    height: 100%;
+    width: 100%;
+    
+    
+}
+#main1{
+    height: 100%;
+    width: 100%;
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+
+#nav{
+    height: 15%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+/* position: relative; */
+    
+    
+}
+#dots{
+    position: relative;
+    left:-30%;
+    top:40%
+
+}
+#dots i:hover{
+    color: #E5BA73;
+}
+#dots i{
+    color: #888;
+    position: absolute;
+    font-size: 30px;
+    
+}
+#nav .logo{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  
+  padding: 10px 10px;
+  margin-top: 20px;
+  margin-right: 50px;
+
+ 
+}
+#nav .logo :hover{
+    animation: logo-anim 0.3s ease-in-out 1  both;
+    border: 2px solid rgba(0, 0, 0, 0.586);
+    filter:blur(1px)
+}
+
+@keyframes logo-anim {
+    25%{
+        rotate: 90deg;
+    }
+    50%{
+        rotate: 180deg;
+    }
+    75%{
+        rotate: 270deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+    
+}
+
+#nav .logo img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#loginlink{
+    position: absolute;
+    right:7%;
+    top:10%;
+    display: flex;
+    
+    
+}
+#loginlink a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #888;
+    margin:9px
+
+}
+.login-hover:hover{
+    color: #E5BA73 ;
+}
+#logoclick{
+    display: none;
+    height: 600px;
+    width: 650px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    border: 2px solid #562B08;
+    
+    
+}
+#logoclick #top1{
+    display: flex;
+    justify-content: center;
+}
+#logoclick  #close{
+  font-size: 40px;
+  margin-left: 235px;
+  margin-top: 10px;
+  
+}
+#logoclick #bottom1{
+
+    width: 100%;
+    height: 7%;
+    background-color: #562B08;
+    position: relative;
+    top: 75%;
+    white-space: nowrap;
+    overflow-x: auto ;
+    overflow-y: hidden;
+}
+#logoclick #bottom1::-webkit-scrollbar{
+    display: none;
+}
+#logoclick #bottom1 h3{
+   display: inline-block;
+   font-size: 25px;
+   font-family: 'Yatra One', cursive;
+   margin-right: 15px;
+   letter-spacing: 1.4px;
+   animation-name: move;
+   animation-duration: 1s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+#logoclick h1{
+    margin-left: 150px;
+    font-size: 55px;
+    font-family: 'Yatra One', cursive;
+    color: #562B08;
+
+}
+#logoclick #circle{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 4px solid #E5BA73 ;
+    content: 'kalakriti';
+    position: absolute;
+    top: 50%;
+    left:35%;
+    transform: translate(-50%,-50%);
+}
+#logoclick #circle video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#logoclick #bar{
+    height: 300px;
+    width: 250px;
+    background-color: #E5BA73;
+    position: absolute;
+    left: 70%;
+    top: 20%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    border: 2px solid #562B08;
+    
+}
+#logoclick #bar a{
+    color: #000;
+}
+#logoclick #bar a:hover{
+    color: #888;
+}
+#nav #head{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+#nav #head img{
+    height: 150px;
+    width: 800px;
+}
+#nav #head h1{
+    font-size: 100px;
+    color:#E5BA73 ;
+    font-family: 'Yatra One', cursive;
+
+}
+/* .chat:hover{
+    color: #A9A9A9;
+}
+#chatbox{
+    display: none;
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+    z-index: 9999;
+    height: 500px;
+    width: 300px;
+    border-radius: 2%;
+    background-color: #fff;
+    align-items: center;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlE3UNHGe9B5FC9VoLMj2O0EpWnVfmbNG4eQ&usqp=CAU");
+}
+.chatt{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ /* background-color: #f91313; */
+ position: relative;
+}
+#chat-text{
+    background-color: #E5BA73;
+    padding: 4px;
+    width: fit-content;
+    position: relative;
+    top:10%;
+    left:-10px;
+    border-radius: 25%;
+}
+
+.chat-circle{
+    height: 25px;
+    width: 25px;
+    border-radius:50% ;
+    /* background-color: #562B08; */
+    position: absolute;
+    top:60%;
+    left:10px;
+    /* border: #002868 2px solid; */
+    /* background-image: url("WhatsApp\ Image\ 2023-02-12\ at\ 3.54.27\ PM.jpeg"); */
+    
+}
+.chat-circle img{
+    width: 100%;
+    height: 100%;
+}
+#chatbox .line{
+    width: 100%;
+    height: 1%;
+    background-color: #562B08;
+}
+#chatbox h2{
+    color:#562B08;
+    display: flex;
+    justify-content: center;
+
+}
+#chatbox h4{
+  margin-top: 40px;
+  font-size: 19px;
+}
+#chatbox img{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+#chatbox input{
+    position: relative;
+    top:72%;
+    left:10px;
+    font-size: 19px;
+
+}
+#chatbox button{
+    position: relative;
+    top:72%;
+    left:20px;
+    font-size: 20px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: blue;
+}
+#chaticon{
+    position: absolute;
+    top:1.5%;
+    right:1%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+} */
+#page1{
+    height: 100%;
+    width: 100%;
+    
+}
+#page1 #content{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 100px; 
+    top: 170px;
+    
+    align-items: center;
+}
+#page1 #content h2{
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    color: #FC5404;
+    font-family: 'Yatra One', cursive;
+    font-weight: 500;
+}
+#page1 #content p{
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+    font-family: 'Yatra One', cursive;
+        color: #E5BA73;
+}
+#page1 #products{
+    height: 500px;
+    width: 800px;
+    position: relative;
+    
+    left: 42%;
+    top: 15%;
+}
+
+.hexagon{
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+width: 200px;
+height: 200px;
+background-color: #cd3d3d;
+}
+.box1{
+    background-size: 180px 180px;
+    background-image: url("https://gogalini.com/images/profile_images/p107/woodcraft-voskakis_p107_55d849736d0b7.jpg");
+    object-fit: cover;
+    background-position: cover;
+    display: flex;
+    justify-content: center;
+    
+ 
+}
+#products  h3{
+    color: #fff;
+    margin-top: 80px;
+    font-size: 28px;
+
+
+}
+.box2{
+    position: absolute;
+    top:0%;
+    left:220px;
+    background-image: url("https://media.architecturaldigest.com/photos/5aff319a55eb56087f0434ac/4:3/w_4039,h_3029,c_limit/pottery-making.jpg");
+    object-fit: cover;
+    background-position: center;
+    background-size: 150px 150px;
+    display: flex;
+    justify-content: center;
+}
+.box3{
+    position: absolute;
+    top:170px;
+    left:110px;
+    background-size: 150px 150px;
+    background-image: url("https://i.ytimg.com/vi/QgxDizFwXdQ/maxresdefault.jpg");
+    background-position: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+.box4{
+    position: absolute;
+    top:170px;
+    left:330px;
+    background-size: 300px 200px;
+    background-image: url("https://tse2.mm.bing.net/th?id=OIP.V33MLodQTLaHNDtGjf3jHwHaHa&pid=Api&P=0");
+    background-position: cover;
+    display: flex;
+    justify-content: center;
+    
+}
+.box5{
+    position: absolute;
+    top:170px;
+    left:550px;
+    background-size: 300px 200px;
+    background-image: url("https://tse2.mm.bing.net/th?id=OIP.ox8t4ZVYsSsKGbv8TkFh1wHaD4&pid=Api&P=0");
+    background-position: cover;
+    display: flex;
+    justify-content: center;
+}
+.box6{
+    position: absolute;
+    top:0%;
+    left:440px;
+    background-size: 300px 200px;
+    background-image: url("https://img2.exportersindia.com/product_images/bc-full/dir_112/3348146/brass-handicrafts-1879592.jpg");
+    background-position: cover;
+    display: flex;
+    justify-content: center;
+}
+.box7{
+    position: absolute;
+    top:0%;
+    left:660px;
+    background-size: 300px 200px;
+    background-image: url("https://tse1.mm.bing.net/th?id=OIP.7GXmTckcSq6rdfjCuGjG7QAAAA&pid=Api&P=0");
+    background-position: cover;
+    display: flex;
+    justify-content: center;
+}
+@keyframes move {
+    0%{
+        transform: translateX(calc(-100%-17px));
+    }
+    100%{
+        transform: translateX(0);
+       
+    }
+    
+}
+#second{
+    width: 100vw;
+   
+}
+#second #top{
+    width: 100%;
+    height: 15%;
+
+}
+#top h1{
+    font-size: 80px;
+    padding-top: 10px;
+    padding-left: 27%;
+    color: #E5BA73;
+    font-family: 'Yatra One', cursive;
+    
+}
+#second #bottom{
+    width: 100%;
+    height: 99%;
+
+}
+
+#bottom .line1{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.smalldivs{
+    height: 260px;
+    background-color: wheat;
+    width: 220px;
+    margin: 25px;
+    position: relative;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    border: solid #812727 1px;
+}
+
+
+.smalldivs img{
+    width: 100%;
+    height: 100%;
+
+
+}
+.smalldivs img:hover{
+   animation: imgzoom 2s ease-in-out both;
+}
+
+@keyframes imgzoom {
+    50%{
+        width: 107%;
+        height: 107%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+.prizetags{
+    padding: 5px;
+    position: absolute;
+    bottom:0;
+    width: 50%;
+    height: 25%;
+    background-color: #812727b6;
+    border-top-right-radius: 20px;
+    border: solid #812727 1px;
+    font-family: 'El Messiri', sans-serif;
+    line-height: 20px;
+}
+.ids{
+    padding: 5px;
+    position: absolute;
+    width: 35%;
+    height: 7%;
+   
+
+}
+.prizetags h5{
+    color:wheat;
+}
+.ids h6{
+    color:#812727;
+}
+.prizetags h4{
+    color:wheat;
+}
+.add{
+    width: 25%;
+    height: 7%;
+    padding: 5px;
+    position: absolute;
+    right:0;
+    display: flex;
+    
+}
+.line1 i{
+    margin: 2px;
+    color:#812727e5;
+}
+.login-form{
+    display: block;
+    height: 100%;
+    width: 100%;
+ 
+    font-weight: 1000;
+    
+
+    background-image: url("https://swarajarchive.files.wordpress.com/2015/03/cover.jpg?w=1568");
+    background-position: 2px 2px;
+    object-fit: cover;
+   
+}
+.login-text{
+    height: 300px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+}
+.login-text h5{
+    font-size: 16px;
+}
+.login-form input{
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.login-form h2{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.login-form a{
+  margin-bottom: 10px;
+}
+.login-form button{
+    /* padding: 8px; */
+    margin-top: 10px;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+    width: 95%;
+    height: 20px;
+    border: none;
+    outline: none;
+    background-color: orangered;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+.register-form{
+    height: 100%;
+    width: 100%;
+    
+    font-weight: 1000;
+    
+   
+    background-image: url("https://www.atyutka.com/wp-content/uploads/2020/08/Kalamkari-Anuradha-Sengupta-2100x1200.jpg");
+    background-position: 1px 1px;
+    object-fit: cover;
+}
+.register-text{
+    height: 350px;
+    width: 250px;
+    padding-left: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.register-text h5{
+    font-size: 16px;
+}
+.register-form h2{
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+.register-icon{
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+.register-form button{
+    width: 95%;
+    height: 20px;
+    border: none;
+    outline: none;
+    background-color: orangered;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+}
+#page2{
+    width: 100vw;
+    height: 30vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+#circle-link{
+    width: 150px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    left:45%;
+    top:-15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: wiggle 2s cubic-bezier(0.19, 1, 0.22, 1) 1s infinite  both;
+
+}
+
+
+  @keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+  
+
+
+#circle-link i{
+   font-size: 50px;
+   color: #FC5404;
+}
+#page2 a{
+    text-decoration: none;
+}
+#page2 h2{
+    color:#E5BA73;
+}
+
+.about{
+    height: 50%;
+    width: 100%;
+    background-color: #E5BA73;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.about h3{
+    margin-bottom: 20px;
+    font-weight: 1000;
+}
+path{
+    stroke:white;
+    fill: black;
+    transition: fill .4s ease;
+}
+path:hover{
+    fill:orange;
+
+}
+#page3{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: hsl(37, 57%, 75%);
+    margin-bottom: 100PX;
+}
+#page3 .counter-up{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    left: 45%;
+    top: 65%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.counter-up .countertext{
+    height: 100px;
+    width: 100px;
+    color: #562B08;
+
+}
+#map-text{
+ position: absolute;
+ top: 28%;
+ left: 15%;
+}
+#map-text h1{
+    font-size: 50px;
+    color: #562B08;
+    font-family: 'Yatra One', cursive;
+    font-weight: 1000;
+    animation: text 2s ease infinite  both;
+
+}
+#map-text h1 span{
+    display: inline-block;
+    transform: translateY(100%);
+    display:none;
+    opacity: 0;
+  
+    }
+#map-text h2{
+    font-size: 35px;
+    color: #8a4c1a;
+    font-family: 'Yatra One', cursive;
+}
+@keyframes text{
+    from{
+        margin-top: 40px;
+        opacity:0;
+    }
+    to{
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+#mapdiv{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%,-50%);
+   
+    
+}
+path:hover,circle:hover{
+    stroke: #002868;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    fill: #fff000;
+    cursor: pointer;
+}
+#path67{
+    fill:none;
+    stroke: #A9A9A9;
+    cursor: default;
+}
+
+#details-box{
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 18px;
+    position: absolute;
+    top: 60%;
+    left: 85%;
+    background-color:#633535 ;
+    color: #fff;
+     height: 160px;
+    width: 250px; 
+    transform: translateY(-50%);
+    transition: opacity .4s ease;
+}

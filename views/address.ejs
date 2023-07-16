@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #main{
+            height: 100%;
+            width: 100%;
+        }
+        #nav{
+         height: 10%;
+         width: 100%;
+        /* background-color: aqua; */
+        display: flex;
+         justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        color: brown;
+         }
+        .box{
+            height: 530px;
+            width: 500px;
+            /* background-color: brown; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* text-align: center; */
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 20%;
+            background-color: burlywood;
+        }
+        .box input{
+            font-size: 14px;
+        }
+        .box h1{
+            position: absolute;
+            top: 1%;
+            text-align: center;
+            font-size: 25px;
+            margin-left: 10px;
+            /* margin-bottom: 10px; */
+        }
+        #bottom{
+    /* height: 100%; */
+    width: 100%;
+    /* position: absolute;
+    top: 30%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+.left a{
+    color:brown;
+    font-size: 20px;
+    text-decoration: none;
+}
+.left i{
+   font-size: 25px;
+}
+.form-data{
+    /* margin-top: 20px; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: burlywood; */
+    margin-top: 10px;
+}
+h3{
+    margin-bottom: 10px;
+}
+input{
+    margin-bottom: 10PX;
+    padding: 7px;
+}
+.box button{
+    padding: 10px;
+  margin-top: 40px;
+  font-size: 15px;
+  background-color: brown ;
+  color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 2%;
+  left: 35%;
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="nav">
+            <h1>Cart</h1>
+            <div class="left">
+                <a href="/wishlist"><i class="ri-heart-fill"></i></a>
+                <a href="/index2">Home</a>
+                <a href="/product">Products</a>
+            </div>
+           
+        </div>
+    <div id="bottom">
+    <div class="box">
+        <h1>Fill your delivery address</h1>
+    <form class="form-data" action="/address" method="post">
+    
+    <h3>Contact details:</h3>
+    <input type="text" name=" name" placeholder="Name" id="">
+    <input type="email" name="email" id="" placeholder="Email">
+    <input type="number" name="number" id="" placeholder="Mobile No.">
+    <h3>Address:</h3>
+    <input type="text" name="address" placeholder="Address(House no./street/Building)">
+    <input type="text" name="city" placeholder="city" id="">
+    <input type="number" name="pincode" placeholder="pincode" id="">
+    <input type="text" name="state" placeholder="state">
+    <input type="text" name="country" placeholder="Country">
+    <!-- <input type="submit" value="Submit"> -->
+    <a href=""><button id="rzp-button1" type="submit">Save & Continue</button></a>
+    </form>
+    
+   </div>
+</div>
+</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      var orderId ;
+      var total;
+$(document).ready(function(){
+    var settings = {
+  "url": "/create/orderId",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "amount": "50000"
+  }),
+};
+
+//creates new orderId everytime
+$.ajax(settings).done(function (response) {
+  
+  orderId=response.id;
+  console.log(response);
+  $("button").show();
+
+  var options = {
+    "key": 'rzp_test_TPGCgE9IVZu4oL', // Enter the Key ID generated from the Dashboard
+    "amount":parseInt(response.amount_due*100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Total amount",
+    "description": "Test Transaction",
+    "image": "",
+    "order_id": orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+      var settings = {
+  "url": "/api/payment/verify",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({response}),
+}
+ $.ajax(settings).done(function(response){
+  if(response.signatureIsValid === "true"){
+    window.location.href='/index2';
+  }else{
+    alert('sorry payment fails!');
+  }
+ })
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9000090000"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+
+});
+});
+    </script>
+</body>
+</html>

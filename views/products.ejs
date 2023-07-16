@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="./favicon_io/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Yatra+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Kalam:wght@300&family=Yatra+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.min.css" integrity="sha512-qcQ7uN9Tta289q3/6Bgp+5EwfCG6AwJerkQjCpabmnF4VYRAF8+oEshf3wxo+ObDQyHLcXqrFTcujCEs5lCLPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/products.css">
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <h1>Best Selling Items</h1>
+                <div id="icons">
+                    <!-- <div class="btn-group">
+                    <button style="z-index: 9999;" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >Categories</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button class="dropdown-item" type="button">Brass Item</button></li>
+                        <li><button class="dropdown-item" type="button">Wooden Articrafts</button></li>
+                        <li><button class="dropdown-item" type="button">Jute Crafts</button></li>
+                        <li><button class="dropdown-item" type="button">bamboo Items</button></li>
+                        <li><button class="dropdown-item" type="button">Shell Articrafts</button></li>
+                     </ul>
+                    </div>  -->
+                    <a href="/index2"><i class="ri-home-3-line"></i></a>
+                    <a href="/cart"><i class="ri-shopping-bag-line"></i></a>
+                    <a href="/wishlist"><i class="ri-heart-line"></i></a>
+                    
+
+                </div>
+        </div>
+        <!-- <form style="position: absolute; z-index: 999999999; background-color: antiquewhite;" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" id="">
+            <input type="text" name="name" id="">
+            <input type="text" name="price" id="">
+            <input type="submit" value="submit">
+        </form> --> 
+        <div class="cnt">
+        <% products.forEach((elem)=>{ %>
+        <div id="bottom">
+            
+            <div class="smalldivs">  <div class="add"><a href="/wishlist/<%= elem._id %>"><i class="ri-heart-add-fill"></i></a> <a href="/addtocart/<%= elem._id %>"><i class="ri-add-circle-fill"></i></a></div><img src="..\images\uploads\<%=elem.productimage%>" alt=""><div class="prizetags"> <h5><%=elem.productname%></h5><h4>Rs. <%=elem.price%></h4>     
+            </div>
+        </div>   
+                   <!-- <div class="smalldivs"><div class="ids"><h6> id : #131313</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse4.mm.bing.net/th?id=OIP.YD8X6doyFfdXNgqKo_5mmAHaFH&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Fox Shaped Wooden art</h5><h4>Rs. 2500/-</h4></div></div>
+                    <div class="smalldivs"><div class="ids"><h6> id : #141414</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse3.mm.bing.net/th?id=OIP.aJJH_k3Wv6ystug3b8Z-rAAAAA&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Sphere Jute Hanging</h5><h4>Rs. 2000/-</h4></div></div>
+                    <div class="smalldivs"><div class="ids"><h6> id : #151515</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="../images/uploads/" alt=""><div class="prizetags"> <h5>"</h5><h4>"</h4></div></div>
+                     <div class="smalldivs"><div class="ids"><h6> id : #151515</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse2.mm.bing.net/th?id=OIP.NlBfLWDNiDKBthKBUmO2uQHaF7&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Colorful flower pottery</h5><h4>Rs. 1000/-</h4></div></div> 
+                    <div class="smalldivs"><div class="ids"><h6> id : #161616</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse1.mm.bing.net/th?id=OIP.caU51gdjtdhRBj7og8FViAHaJ4&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Heart Shape Shell art</h5><h4>Rs. 1500/-</h4></div></div></div>  -->
+        </div>
+        <% }); %> 
+    </div>
+</body>
+</html>

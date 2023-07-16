@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/cart.css">
+</head>
+<body>
+    <div id="main">
+        <div id="nav">
+            <h1>Cart</h1>
+            <div class="left">
+                <a href="/wishlist"><i class="ri-heart-fill"></i></a>
+                <a href="/index2">Home</a>
+                <a href="/product">Products</a>
+            </div>
+           
+        </div>
+        <% if(cart_arr.length>0){ %>
+    <div id="bottom">
+        <div id="box">
+            <% cart_arr.forEach( (elem) =>{ %>
+            <div class="box-con">
+               
+             <div class="left"><img src="..\images\uploads\<%=elem.productimage%>" alt=""> </div>
+             
+             <h4><%=elem.productname %> <br><a href="/deleteprod/<%=elem._id %>"><i class="ri-delete-bin-7-fill"></i></a></h4>
+             <h4><%=elem.price%></h4>
+             
+            </div>
+            <%  }) %>
+          
+            <!-- <div class="box-con">
+                <div class="left"><img src="" alt=""></div>
+                <h2>product name</h2>
+                <h2>Rs 300</h2>
+               </div> -->
+               <div class="total">
+                <h3>Total</h3>
+                <h3>Rs <%=total%></h3>
+            </div>  
+        </div>
+        <a href="/address"><button>Proceed for Address</button></a>
+    </div>
+    <% }else{ %>
+          <div class="empty">
+            <h1>No items in your cart</h1>
+         </div>    
+        <% } %>
+    </div>
+</body>
+</html>

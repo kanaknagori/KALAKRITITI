@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="./favicon_io/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    scroll-behavior: smooth;
+    font-size: 10px;
+    font-family: 'Special Elite', cursive;
+  }
+  #main{
+    height: 100%;
+    width: 100%;
+  }
+  .top{
+    height: 10%;
+    width: 100%;
+    padding: 20px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top h1{
+    font-size: 30px;
+    color: #E5BA73;
+  }
+  .top .icon{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #E5BA73;
+    /* font-size: 13px; */
+    
+  }
+  .top .icon a{
+    font-size: 19px;
+    text-decoration: none;
+    
+    color: #E5BA73;
+  }
+  .top .icon i{
+    font-size: 19px;
+  }
+  .cnt{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: aqua; */
+  }
+#bottom{
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; */
+  
+  /* width: 100%; */
+  height: 100%;
+  padding-left: 25px;
+}
+  .smalldivs{
+    height: 260px;
+    background-color: wheat;
+    width: 220px;
+    margin: 25px;
+    position: relative;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    border: solid #812727 1px;
+    
+ }
+ .smalldivs img{
+    width: 100%;
+    height: 100%;
+    
+  }
+  .smalldivs img:hover{
+   animation: imgzoom 2s ease-in-out both;
+  }
+  
+  @keyframes imgzoom {
+    50%{
+        width: 107%;
+        height: 107%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+    
+ }
+ .prizetags{
+    padding: 5px;
+    position: absolute;
+    bottom:0;
+    width: 50%;
+    height: 25%;
+    background-color: #812727b6;
+    border-top-right-radius: 20px;
+    border: solid #812727 1px;
+    font-family: 'El Messiri', sans-serif;
+    line-height: 20px;
+  }
+  .ids{
+    padding: 5px;
+    position: absolute;
+    width: 35%;
+    height: 7%;
+   
+  }
+  .prizetags h5{
+    color:wheat;
+  }
+  .ids h6{
+    color:#812727;
+  }
+  .prizetags h4{
+    color:wheat;
+  }
+  .add{
+    width: 25%;
+    height: 7%;
+    padding: 5px;
+    position: absolute;
+    right:0;
+    display: flex;
+    font-size: 20px;
+    
+  }
+  .add a{
+    text-decoration: none;
+    color: #000;
+  }
+  .empty{
+    color: #E5BA73;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+    </style>
+</head>
+<body>
+  <div id="main">
+    <div class="top">
+      <h1>WISHLIST</h1>
+      <div class="icon">
+        <a href="cart"><i class="ri-shopping-bag-line"></i></a>
+        <a href="/index2">Home</a>
+        <a href="/product">Products</a>
+      </div>
+    </div>
+    <% if (wish_arr.length>0) { %>
+    <div class="cnt">
+      
+        <% wish_arr.forEach((elem)=>{ %>
+        <div id="bottom">
+            
+            <div class="smalldivs">  <div class="add"><a href="/deleteWishlist/<%=elem._id%>"><i class="ri-subtract-fill"></i></a> <a href="/addtocart/<%= elem._id %>"><i class="ri-add-circle-fill"></i></a></div><img src="..\images\uploads\<%=elem.productimage%>" alt=""><div class="prizetags"> <h5><%=elem.productname%></h5><h4>Rs. <%=elem.price%></h4>     
+            </div>
+        </div>   
+                   <!-- <div class="smalldivs"><div class="ids"><h6> id : #131313</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse4.mm.bing.net/th?id=OIP.YD8X6doyFfdXNgqKo_5mmAHaFH&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Fox Shaped Wooden art</h5><h4>Rs. 2500/-</h4></div></div>
+                    <div class="smalldivs"><div class="ids"><h6> id : #141414</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse3.mm.bing.net/th?id=OIP.aJJH_k3Wv6ystug3b8Z-rAAAAA&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Sphere Jute Hanging</h5><h4>Rs. 2000/-</h4></div></div>
+                    <div class="smalldivs"><div class="ids"><h6> id : #151515</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="../images/uploads/" alt=""><div class="prizetags"> <h5>"</h5><h4>"</h4></div></div>
+                     <div class="smalldivs"><div class="ids"><h6> id : #151515</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse2.mm.bing.net/th?id=OIP.NlBfLWDNiDKBthKBUmO2uQHaF7&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Colorful flower pottery</h5><h4>Rs. 1000/-</h4></div></div> 
+                    <div class="smalldivs"><div class="ids"><h6> id : #161616</h6></div><div class="add"><i class="ri-heart-add-fill"></i><i class="ri-add-circle-fill"></i></div><img src="https://tse1.mm.bing.net/th?id=OIP.caU51gdjtdhRBj7og8FViAHaJ4&pid=Api&P=0" alt=""><div class="prizetags"> <h5>Heart Shape Shell art</h5><h4>Rs. 1500/-</h4></div></div></div>  -->
+        </div>
+        <% }); %> 
+    </div>
+    <% }else{ %>
+      <div class="empty">
+        <h1>Add items to your wishlist.</h1>
+      </div>
+      <%}%>
+  </div>
+</body>
+</html>
