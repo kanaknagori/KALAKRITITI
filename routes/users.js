@@ -1,12 +1,12 @@
 var mongoose= require('mongoose');
 var express = require('express');
-
+require('dotenv').config();
 // /* GET users listing. */
 // router.get('/', function(req, res, next) {
 //   res.send('respond with a resource');
 // });
 var plm= require('passport-local-mongoose');
-mongoose.connect("mongodb://0.0.0.0:27017/kalakritii").then((result) => {
+mongoose.connect(process.env['MONGO_URL']).then((result) => {
   console.log("connected to database")
 }).catch((err) => {
   console.log(err)
