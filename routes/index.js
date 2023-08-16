@@ -61,7 +61,8 @@ require('dotenv').config();
 passport.use(new GoogleStrategy({
   clientID: process.env['GOOGLE_CLIENT_ID'],
   clientSecret: process.env['GOOGLE_CLIENT_SECRET'],
-  callbackURL: '/oauth2/redirect/google',
+  //callbackURL: '/oauth2/redirect/google',
+  callbackURL:'http://kalakriti-jqhh.onrender.com/oauth2/redirect/google',
   scope: ['email', 'profile' ]
 }, async function verify(issuer, profile, cb) {
   console.log(profile);
